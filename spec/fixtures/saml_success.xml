@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Header/>
+  <SOAP-ENV:Body>
+    <Response xmlns="urn:oasis:names:tc:SAML:1.0:protocol" xmlns:saml="urn:oasis:names:tc:SAML:1.0:assertion" xmlns:samlp="urn:oasis:names:tc:SAML:1.0:protocol" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" IssueInstant="2017-06-03T23:11:29.802Z" MajorVersion="1" MinorVersion="1" Recipient="https://example.org/users/auth/cas/callback?url=https%3A%2F%2Fexample.org%2F" ResponseID="_8e07437c92ef45f6ce535c957a9885ca">
+      <Status>
+        <StatusCode Value="samlp:Success"></StatusCode>
+      </Status>
+      <Assertion xmlns="urn:oasis:names:tc:SAML:1.0:assertion" AssertionID="_63431967131199e707a3272cfbf00049" IssueInstant="2017-06-03T23:11:29.802Z" Issuer="localhost" MajorVersion="1" MinorVersion="1">
+        <Conditions NotBefore="2017-06-03T23:11:29.802Z" NotOnOrAfter="2017-06-03T23:11:59.802Z">
+        <AudienceRestrictionCondition>
+          <Audience>https://example.org/users/auth/cas/callback?url=https%3A%2F%2Fexample.org%2F</Audience>
+        </AudienceRestrictionCondition>
+      </Conditions>
+      <AttributeStatement>
+        <Subject>
+          <NameIdentifier>psegel</NameIdentifier>
+          <SubjectConfirmation>
+            <ConfirmationMethod>urn:oasis:names:tc:SAML:1.0:cm:artifact</ConfirmationMethod>
+          </SubjectConfirmation>
+        </Subject>
+        <Attribute AttributeName="mail" AttributeNamespace="http://www.ja-sig.org/products/cas/">
+          <AttributeValue>mail@test.com</AttributeValue>
+        </Attribute>
+        <AuthenticationStatement AuthenticationInstant="2017-06-03T23:09:34.799Z" AuthenticationMethod="urn:oasis:names:tc:SAML:1.0:am:unspecified">
+          <Subject>
+            <NameIdentifier>psegel</NameIdentifier>
+            <SubjectConfirmation>
+              <ConfirmationMethod>urn:oasis:names:tc:SAML:1.0:cm:artifact</ConfirmationMethod>
+            </SubjectConfirmation>
+          </Subject>
+        </AuthenticationStatement>
+      </Assertion>
+    </Response>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
