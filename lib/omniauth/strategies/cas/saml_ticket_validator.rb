@@ -41,7 +41,7 @@ module OmniAuth
             if success?(doc)
               attrs = extract_attributes(doc)
               attrs["nameIdentifier"] = extract_name_identifier(doc)
-              { "user" => attrs["uid"] }.merge(attrs)
+              { "user" => attrs["nameIdentifier"] }.merge(attrs)
             else
               OmniAuth.logger.warn "Received unsuccessful SAML response, will return nil user_info:\n#{@response_body}"
               nil
@@ -55,7 +55,7 @@ module OmniAuth
         private
 
         def success?(doc)
-          doc.css("StatusCode").attr("Value").text == "saml1p:Success"
+          doc.css("StatusCode").attr("Value").text =~ /saml1?p:Success/
         end
 
         def extract_attributes(doc)
